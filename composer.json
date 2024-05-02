@@ -1,12 +1,32 @@
 {
-  "name": "upstatement/timber-starter-theme",
+  "name": "timber/timber-starter-theme",
   "description": "Starter theme to build a Timber theme",
   "type":"wordpress-theme",
   "license": "MIT",
   "authors": [
     {
+      "name": "Erik van der Bas",
+      "email": "erik@basedonline.nl",
+      "homepage": "https://basedonline.nl"
+    },
+    {
+      "name": "Lukas Gächter",
+      "email": "lukas.gaechter@mind.ch",
+      "homepage": "https://www.mind.ch"
+    },
+    {
+      "name": "Nicolas Lemoine",
+      "email": "nico@n5s.dev",
+      "homepage": "https://n5s.dev"
+    },
+    {
+      "name": "Jared Novack",
       "email": "jared@upstatement.com",
-      "name": "jarednova"
+      "homepage": "https://upstatement.com"
+    },
+    {
+      "name": "Timber Community",
+      "homepage": "https://github.com/timber/timber"
     }
   ],
   "repositories": [
@@ -16,7 +36,7 @@
     }
   ],
   "require": {
-    "timber/timber": "2.x-dev"
+    "timber/timber": "^2.1"
   },
   "require-dev": {
     "automattic/wordbless": "^0.4.2",
