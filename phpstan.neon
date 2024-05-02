@@ -1,0 +1,13 @@
+parameters:
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
+    level: 5 # Increase until "max"
+    paths:
+        - src/
+        - page.php
+    excludePaths:
+        - tests/*
+        - docs/*
+    ignoreErrors:
+      
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
