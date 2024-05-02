@@ -1,28 +1,26 @@
-{% block html_head_container %}
-
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
+<!doctype html>
+<html {{ site.language_attributes }}>
+{% block head %}
+	{% include 'head.twig' %}
 {% endblock %}
 
-	<body class="{{body_class}}" data-template="base.twig">
+	<body class="{{body_class}}">
 		{{ function('wp_body_open') }}
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 		<header class="header" >
 			{% block header %}
 				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+					<h1 class="hdr-logo">
+						<a class="hdr-logo-link" href="{{site.url}}">{{site.name}}</a>
 					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
+					<nav id="nav-main" class="nav-main">
 						{% include "menu.twig" with {'items': menu.get_items} %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
+		<section id="content" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper">
 				{% block content %}
@@ -37,10 +35,9 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
+			{% include 'footer.twig' %}
 		{% endblock %}
+		{{ function('wp_footer') }}
+		{% do action('get_footer') %}
 	</body>
 </html>
