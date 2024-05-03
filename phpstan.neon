@@ -3,10 +3,12 @@ parameters:
     level: 5 # Increase until "max"
     paths:
         - src/
-        - page.php
+        - %currentWorkingDirectory%/
     excludePaths:
         - tests/*
         - docs/*
+        - vendor/*
+        - wordpress/*
     ignoreErrors:
       
 includes:

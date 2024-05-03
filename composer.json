@@ -43,7 +43,8 @@
   "scripts": {
     "test": "phpunit",
     "cs": "@php ./vendor/bin/phpcs",
-    "cs:fix": "@php ./vendor/bin/phpcbf"
+    "cs:fix": "@php ./vendor/bin/phpcbf",
+    "phpstan": "@php ./vendor/bin/phpstan analyse"
   }
 }
 
