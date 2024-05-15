@@ -24,7 +24,7 @@
             <textarea placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
         </label>
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden" />
-        <input name="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden" />
+        <input name="comment_parent" value="{{ comment.id|default('0') }}" type="hidden" />
         <button type="submit" name="Submit" class="btn">Send</button>
         <button type="reset">Cancel</button>
         <p>Your comment will be revised by the site if needed.</p>

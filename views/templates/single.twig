@@ -2,11 +2,10 @@
 
 {% block content %}
     <div class="content-wrapper">
-        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
             <img src="{{ post.thumbnail.src|resize(1200, 300) }}" />
             <section class="article-content">
                 <h1 class="article-h1">{{ post.title }}</h1>
-                <a href="{{ post.link }}">{{ _e('edit') }}</a>
                 <p class="blog-author">
                     <span>By</span>
                     <a href="{{ post.author.path }}">{{ post.author.name }}</a>
