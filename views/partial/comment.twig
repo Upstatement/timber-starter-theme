@@ -1,19 +1,19 @@
-<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-	<h5 class="comment-author">{{comment.author.name}} says</h5>
-	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+<div class="blog-comment {{ comment.comment_type }}" id="blog-comment-{{ comment.ID }}">
+    <h5 class="comment-author">{{ comment.author.name }} says</h5>
+    <div class="comment-content">{{ comment.comment_content|wpautop }}</div>
 
-	<section class="comment-box">
-		
-		{% include "partials/comment-form.twig" %}
+    <section class="comment-box">
+        {% include 'partials/comment-form.twig' %}
 
-		{% if post.comments %}
-			<h4> replies </h4>
-			<div class="comments">
-				{% for cmt in comment.children %}
-					{% include "partials/comment.twig" with {comment:cmt} %}
-				{% endfor %}
-			</div>
-		{% endif %}
-
-	</section>
+        {% if post.comments %}
+            <h4>replies</h4>
+            <div class="comments">
+                {% for cmt in comment.children %}
+                    {% include 'partials/comment.twig' with {
+                        comment: cmt
+                    } %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
 </div>

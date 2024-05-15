@@ -1,38 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html {{ site.language_attributes }}>
-{% block head %}
-	{% include 'partials/head.twig' %}
-{% endblock %}
+    {% block head %}
+        {% include 'partials/head.twig' %}
+    {% endblock %}
 
-	<body class="{{body_class}}">
-		{{ function('wp_body_open') }}
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo">
-						<a class="hdr-logo-link" href="{{site.url}}">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main">
-						{% include "partials/menu.twig" with {'items': menu.get_items} %}
-					</nav><!-- #nav -->
-				</div>
-			{% endblock %}
-		</header>
+    <body class="{{ body_class }}">
+        {{ function('wp_body_open') }}
+        <a class="skip-link screen-reader-text" href="#content">{{ _e('Skip to content') }}</a>
+        <header class="header">
+            {% block header %}
+                <div class="wrapper">
+                    <h1 class="hdr-logo">
+                        <a class="hdr-logo-link" href="{{ site.url }}">{{ site.name }}</a>
+                    </h1>
+                    <nav id="nav-main" class="nav-main">
+                        {% include 'partials/menu.twig' with {
+                            items: menu.get_items
+                        } %}
+                    </nav>
+                    <!-- #nav -->
+                </div>
+            {% endblock %}
+        </header>
 
-		<section id="content" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-		</section>
+        <section id="content" class="content-wrapper">
+            {% if title %}
+                <h1>{{ title }}</h1>
+            {% endif %}
+            <div class="wrapper">
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+            </div>
+        </section>
 
-		{% block footer %}
-			{% include 'partials/footer.twig' %}
-		{% endblock %}
-		{{ function('wp_footer') }}
-		{% do action('get_footer') %}
-	</body>
+        {% block footer %}
+            {% include 'partials/footer.twig' %}
+        {% endblock %}
+        {{ function('wp_footer') }}
+        {% do action('get_footer') %}
+    </body>
 </html>
