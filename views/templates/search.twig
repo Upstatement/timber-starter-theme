@@ -7,7 +7,7 @@
             {% include ['partials/tease-' ~ post.post_type ~ '.twig', 'partials/tease.twig'] %}
         {% endfor %}
 
-        {% include 'partial/pagination.twig' with {
+        {% include 'partials/pagination.twig' with {
             pagination: posts.pagination({
                 show_all: false,
                 mid_size: 3,
