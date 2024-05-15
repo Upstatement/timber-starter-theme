@@ -9,12 +9,8 @@ namespace App;
 
 use Timber\Timber;
 
-$post    = Timber::get_post();
-$context = Timber::context(
-	[
-		'post' => $post,
-	]
-);
+$context = Timber::context();
+$post = $context['post'];
 
 if (post_password_required($post->ID)) {
 	Timber::render('single-password.twig', $context);
