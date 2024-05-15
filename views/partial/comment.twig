@@ -4,15 +4,13 @@
 
 	<section class="comment-box">
 		
-		<!-- comment form -->
-		{% include "comment-form.twig" %}
+		{% include "partials/comment-form.twig" %}
 
-		<!-- child comments -->
 		{% if post.comments %}
 			<h4> replies </h4>
 			<div class="comments">
 				{% for cmt in comment.children %}
-					{% include "comment.twig" with {comment:cmt} %}
+					{% include "partials/comment.twig" with {comment:cmt} %}
 				{% endfor %}
 			</div>
 		{% endif %}

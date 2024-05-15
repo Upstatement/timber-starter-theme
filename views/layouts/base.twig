@@ -1,7 +1,7 @@
 <!doctype html>
 <html {{ site.language_attributes }}>
 {% block head %}
-	{% include 'head.twig' %}
+	{% include 'partials/head.twig' %}
 {% endblock %}
 
 	<body class="{{body_class}}">
@@ -14,7 +14,7 @@
 						<a class="hdr-logo-link" href="{{site.url}}">{{site.name}}</a>
 					</h1>
 					<nav id="nav-main" class="nav-main">
-						{% include "menu.twig" with {'items': menu.get_items} %}
+						{% include "partials/menu.twig" with {'items': menu.get_items} %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}
@@ -30,7 +30,7 @@
 		</section>
 
 		{% block footer %}
-			{% include 'footer.twig' %}
+			{% include 'partials/footer.twig' %}
 		{% endblock %}
 		{{ function('wp_footer') }}
 		{% do action('get_footer') %}
