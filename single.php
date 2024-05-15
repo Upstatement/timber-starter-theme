@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
-namespace Timber\StarterTheme;
+namespace App;
 
 use Timber\Timber;
 

@@ -4,7 +4,7 @@
  * The template for the 404 page
  */
 
-namespace Timber\StarterTheme;
+namespace App;
 
 use Timber\Timber;
 

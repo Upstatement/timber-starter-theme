@@ -7,7 +7,7 @@
  * @link https://github.com/timber/starter-theme
  */
 
-namespace Timber\StarterTheme;
+namespace App;
 
 use Timber\Timber;
 

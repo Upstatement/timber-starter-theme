@@ -10,7 +10,7 @@
  *
  */
 
-namespace Timber\StarterTheme;
+namespace App;
 
 use Timber\Timber;
 
