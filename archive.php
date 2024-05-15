@@ -16,8 +16,6 @@ use Timber\Timber;
 
 $templates = array('archive.twig', 'index.twig');
 
-$context = Timber::context();
-
 $title = 'Archive';
 if (is_day()) {
 	$title = 'Archive: ' . get_the_date('D M Y');
@@ -35,9 +33,8 @@ if (is_day()) {
 	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 }
 
-$posts = Timber::get_posts();
-
-Timber::render($templates, [
+$context = Timber::context([
 	'title' => $title,
-	'posts' => $posts,
 ]);
+
+Timber::render($templates, $context);
