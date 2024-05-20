@@ -132,7 +132,7 @@ class StarterSite extends Site
 		 */
 		// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 
-		$twig->addFilter(new Twig\TwigFilter('myfoo', [$this, 'myfoo']));
+		$twig->addFilter(new \Twig\TwigFilter('myfoo', [$this, 'myfoo']));
 
 		return $twig;
 	}

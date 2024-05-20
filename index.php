@@ -13,7 +13,6 @@
 
 use Timber\Timber;
 
-$posts     = Timber::get_posts();
 $templates = array('index.twig');
 
 if (is_home()) {
@@ -21,7 +20,6 @@ if (is_home()) {
 }
 
 $context = Timber::context([
-	'posts' => $posts,
 	'foo'   => 'bar',
 ]);
 

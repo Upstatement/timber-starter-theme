@@ -21,7 +21,6 @@ if (isset($wp_query->query_vars['author'])) {
 
 $context = Timber::context([
 	'title'  => $title,
-	'posts'  => Timber::get_posts(),
 	'author' => $author,
 ]);
 

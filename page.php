@@ -14,12 +14,7 @@ namespace App;
 
 use Timber\Timber;
 
-$post = Timber::get_post();
+$context = Timber::context();
+$post = $context['post'];
 
-$context = Timber::context(
-   [
-      'post' => $post,
-   ]
-);
-
-Timber::render(array('page-' . $timber_post->post_name . '.twig', 'page.twig'), $context);
+Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
