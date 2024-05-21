@@ -31,7 +31,7 @@ class TestTimberStarterTheme extends BaseTestCase {
 
 	function testFunctionsPHP() {
 		$context = Timber::context();
-		$this->assertEquals('StarterSite', get_class($context['site']));
+		$this->assertEquals('App\StarterSite', get_class($context['site']));
 		$this->assertTrue(current_theme_supports('post-thumbnails'));
 		$this->assertEquals('bar', $context['foo']);
 	}
