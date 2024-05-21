@@ -26,37 +26,30 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0', '8.1']
+        php: ['8.1', '8.2']
         wp: ['latest']
         multisite: ['0', '1']
         extensions: ['gd']
         experimental: [false]
         include:
-          # WP Trunk
-          - php: '7.4'
-            wp: 'trunk'
-            multisite: '0'
-            experimental: true
-          # PHP 8.0
-          - php: '8.0'
-            wp: 'latest'
-            multisite: '0'
-            experimental: false
-          # PHP 8.1
-          - php: '8.1'
-            wp: 'latest'
-            multisite: '0'
-            experimental: false
-          # PHP 8.1 / experimental
-          - php: '8.1'
-            wp: 'trunk'
-            multisite: '0'
-            experimental: true
           # PHP 8.2 / experimental
           - php: '8.2'
             wp: 'trunk'
+            dependency-version: 'highest'
             multisite: '0'
             experimental: true
+          # PHP 8.3 / experimental
+          - php: '8.3'
+            wp: 'trunk'
+            dependency-version: 'highest'
+            multisite: '0'
+            experimental: true
+          # Coverage
+          - php: '8.1'
+            wp: 'latest'
+            dependency-version: 'highest'
+            multisite: '0'
+            experimental: false
 
     steps:
       - name: Checkout

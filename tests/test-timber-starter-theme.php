@@ -6,15 +6,15 @@ use WorDBless\BaseTestCase;
 class TestTimberStarterTheme extends BaseTestCase {
 
 	public function set_up() {
-		switch_theme( basename( dirname( __DIR__ ) ) . '/theme' );
+		switch_theme(basename(dirname(__DIR__)) . '/theme');
 
-		require dirname( __DIR__ ) . '/functions.php';
+		require dirname(__DIR__) . '/functions.php';
 
-		Timber::$dirname = array_merge( (array) Timber::$dirname, [ '../views' ] );
-		Timber::$dirname = array_unique( Timber::$dirname );
+		Timber::$dirname = array_merge((array) Timber::$dirname, [ '../views' ]);
+		Timber::$dirname = array_unique(Timber::$dirname);
 
 		// WorDBless includes wp-settings.php
-		do_action( 'after_setup_theme' );
+		do_action('after_setup_theme');
 
 		parent::set_up();
 	}
