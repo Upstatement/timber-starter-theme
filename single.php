@@ -11,7 +11,7 @@ use Timber\Timber;
 
 $context = Timber::context();
 $post = $context['post'];
-$templates = array('templates/single-' . $post->ID . '.twig', 'templates/single-' . $post->post_type . '.twig', 'templates/single-' . $post->slug . '.twig', 'templates/single.twig');
+$templates = array('templates/single-' . $post->post_type . '.twig', 'templates/single.twig');
 
 if (post_password_required($post->ID)) {
 	$templates = 'templates/single-password.twig';
