@@ -11,19 +11,10 @@ namespace App;
 
 use Timber\Timber;
 
-global $wp_query;
+$context = Timber::context();
 
-$author = false;
-$title = false;
-
-if (isset($wp_query->query_vars['author'])) {
-	$author = Timber::get_user($wp_query->query_vars['author']);
-	$title  = 'Author Archives: ' . $author->name();
+if (isset($context['author'])) {
+	 $context['title'] = sprintf(__('Archive of %s', 'timber-starter'), $context['author']->name());
 }
 
-$context = Timber::context([
-	'title'  => $title,
-	'author' => $author,
-]);
-
-Timber::render( array( 'templates/author.twig', 'templates/archive.twig' ), $context );
+Timber::render(array('templates/author.twig', 'templates/archive.twig'), $context);
