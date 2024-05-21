@@ -16,13 +16,13 @@
 	<!-- Set a minimum PHP version for PHPCompatibility -->
 	<config name="testVersion" value="8.1-" />
 
-	<rule ref="10up-Default" />
-	<rule ref="WordPress-Core" />
-	<rule ref="WordPress-Docs" />
-	<rule ref="WordPress-Extra" />
-	<!-- Add VIP-specific rules -->
-	<config name="minimum_supported_wp_version" value="6.1"/>
+	<!-- Use 10up's phpcs ruleset -->
+	<rule ref="10up-Default">
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
+	</rule>
 
+	<!-- Set the text domain to timber-starter -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array" value="timber-starter"/>

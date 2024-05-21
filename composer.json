@@ -62,9 +62,9 @@
     }
   },
   "scripts": {
-    "test": "phpunit",
-    "cs": "@php ./vendor/bin/phpcs",
-    "cs:fix": "@php ./vendor/bin/phpcbf",
+    "test": "phpunit",  
+    "cs": "@php ./vendor/bin/phpcs --colors -s -p -v ./",
+    "cs:fix": "@php ./vendor/bin/phpcbf --colors -s -p -v ./",
     "phpstan": "@php ./vendor/bin/phpstan analyse"
   }
 }

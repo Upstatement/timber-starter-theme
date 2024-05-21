@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main template file
  *
@@ -13,14 +12,16 @@
 
 use Timber\Timber;
 
-$templates = array('templates/index.twig');
+$templates = [ 'templates/index.twig' ];
 
-if (is_home()) {
+if ( is_home() ) {
 	array_unshift( $templates, 'templates/front-page.twig', 'templates/home.twig' );
 }
 
-$context = Timber::context([
-	'foo'   => 'bar',
-]);
+$context = Timber::context(
+	[
+		'foo' => 'bar',
+	]
+);
 
-Timber::render($templates, $context);
+Timber::render( $templates, $context );
