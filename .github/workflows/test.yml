@@ -30,7 +30,6 @@ jobs:
         wp: ['latest']
         multisite: ['0', '1']
         extensions: ['gd']
-        coverage: [false]
         experimental: [false]
         include:
           # PHP 8.2 / experimental
@@ -50,7 +49,6 @@ jobs:
             wp: 'latest'
             dependency-version: 'highest'
             multisite: '0'
-            coverage: true
             experimental: false
 
     steps:
